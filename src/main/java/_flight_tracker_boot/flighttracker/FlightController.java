@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 @RestController
-@CrossOrigin(origins = "http://172.30.85.1:3000")
+@CrossOrigin
 @RequestMapping("/api/flights")
 
 public class FlightController {
