@@ -17,6 +17,7 @@ public class Flight {
     private ObjectId id;
     protected long flightNumber;
     protected String aircraft;
+    protected String airport;
     protected String source;
     protected String destination;
     protected String scheduledDepartureTime;
@@ -28,10 +29,11 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(String aircraft, String source, String destination, long flightNumber,
+    public Flight(String aircraft, String airport, String source, String destination, long flightNumber,
             String scheduledDepartureTime, String actualDepartureTime, String scheduledArrivalTime,
             String estimatedArrivalTime, FlightType flightType) {
         this.aircraft = aircraft;
+        this.airport = airport;
         this.source = source;
         this.destination = destination;
         this.flightNumber = flightNumber;
