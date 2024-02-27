@@ -1,19 +1,24 @@
 package _flight_tracker_boot.flighttracker;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Data;
 
 enum FlightType {
     NON_PRIVATE_FLIGHT, PRIVATE_FLIGHT
 }
 
 @Document(collection = "flights")
+@Data
 public class Flight {
     @Id
+    private ObjectId id;
     protected long flightNumber;
-    protected Aircraft aircraft;
-    protected Airport source;
-    protected Airport destination;
+    protected String aircraft;
+    protected String source;
+    protected String destination;
     protected String scheduledDepartureTime;
     protected String actualDepartureTime;
     protected String scheduledArrivalTime;
@@ -23,7 +28,7 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(Aircraft aircraft, Airport source, Airport destination, long flightNumber,
+    public Flight(String aircraft, String source, String destination, long flightNumber,
             String scheduledDepartureTime, String actualDepartureTime, String scheduledArrivalTime,
             String estimatedArrivalTime, FlightType flightType) {
         this.aircraft = aircraft;
